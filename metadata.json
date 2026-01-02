@@ -1,0 +1,8 @@
+{
+  "name": "Alex Morgan Portfolio - Designing Intelligence",
+  "description": "A high-end, AI-powered portfolio for a product designer, featuring deep integration with Gemini for conversational interaction and a sleek, dark-themed UI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
