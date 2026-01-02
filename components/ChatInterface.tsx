@@ -41,17 +41,17 @@ const ChatInterface: React.FC<ChatInterfaceProps> = () => {
   ];
 
   return (
-    <div className="w-full max-w-3xl flex flex-col items-center gap-8 animate-fade-in-up">
+    <div className="w-full max-w-3xl flex flex-col items-center gap-4 sm:gap-6 md:gap-8 animate-fade-in-up px-4 sm:px-0">
       {/* Hero Text */}
       {messages.length === 0 && (
         <div className="flex flex-col items-center text-center space-y-4 mb-4">
           <BlurText
             text="Engineering intelligence for the future."
-            className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.1] justify-center"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] justify-center"
             delay={50}
             animateBy="words"
           />
-          <p className="text-lg md:text-xl text-slate-400 font-normal max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-400 font-normal max-w-xl leading-relaxed px-2">
             AI Engineer & Full Stack Developer building scalable AI solutions.
           </p>
         </div>
@@ -96,19 +96,13 @@ const ChatInterface: React.FC<ChatInterfaceProps> = () => {
           {/* Glow Effect */}
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-indigo-500/50 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500 pointer-events-none"></div>
 
-          <div className="relative w-full bg-surface-dark rounded-2xl p-2 flex items-center shadow-2xl shadow-black/50 border border-white/5 h-20">
-            <div className="pl-4 pr-3 text-slate-400">
-              <span className={`material-symbols-outlined text-3xl ${loading ? 'animate-spin' : 'animate-pulse'}`}>
-                {loading ? 'sync' : 'spark'}
-              </span>
-            </div>
-
+          <div className="relative w-full bg-surface-dark rounded-2xl p-2 sm:p-3 flex items-center shadow-2xl shadow-black/50 border border-white/5 h-14 sm:h-16 md:h-20">
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="How can I help build your next product?"
-              className="flex-1 bg-transparent border-none focus:ring-0 text-xl text-white placeholder-slate-500 font-normal px-2 h-full outline-none"
+              className="flex-1 bg-transparent border-none focus:ring-0 text-base sm:text-lg md:text-xl text-white placeholder-slate-500 font-normal px-3 sm:px-4 h-full outline-none"
             />
 
             <button
@@ -125,7 +119,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = () => {
         </form>
 
         {/* Quick Suggestion Chips */}
-        <div className="flex flex-wrap justify-center gap-3 w-full">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 w-full">
           {chips.map((chip) => (
             <button
               key={chip.label}
@@ -134,10 +128,10 @@ const ChatInterface: React.FC<ChatInterfaceProps> = () => {
                 // Trigger submit after state update
                 setTimeout(() => handleSubmit(), 50);
               }}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800 transition-all cursor-pointer group"
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-surface-dark border border-slate-700/50 hover:border-primary/50 hover:bg-slate-800 transition-all cursor-pointer group"
             >
-              <span className="material-symbols-outlined text-lg text-primary">{chip.icon}</span>
-              <span className="text-sm font-medium text-slate-300">{chip.label}</span>
+              <span className="material-symbols-outlined text-base sm:text-lg text-primary">{chip.icon}</span>
+              <span className="text-xs sm:text-sm font-medium text-slate-300">{chip.label}</span>
             </button>
           ))}
         </div>

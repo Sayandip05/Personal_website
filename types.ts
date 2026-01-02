@@ -33,4 +33,5 @@ export interface WorkExperience {
   techStack: string[];
   icon: string;
   link?: string;
+  linkText?: string;
 }

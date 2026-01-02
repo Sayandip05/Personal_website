@@ -19,16 +19,16 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isOpen, setI
   ];
 
   const secondaryLinks = [
-    { name: 'GitHub', icon: 'code', href: 'https://github.com' },
-    { name: 'LinkedIn', icon: 'link', href: 'https://linkedin.com' },
-    { name: 'Resume', icon: 'description', href: '#' },
+    { name: 'GitHub', icon: 'code', href: 'https://github.com/Sayandip05' },
+    { name: 'LinkedIn', icon: 'link', href: 'https://www.linkedin.com/in/sayandipbar2005' },
+    { name: 'Resume', icon: 'description', href: '/resume.pdf' },
   ];
 
   return (
     <>
       {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/60 z-30 md:hidden backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
@@ -44,10 +44,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isOpen, setI
           {/* Header Section */}
           <div className="flex items-center gap-3">
             <div className="size-11 rounded-full overflow-hidden ring-1 ring-white/10">
-              <img 
-                alt={PROFILE_NAME} 
-                className="w-full h-full object-cover" 
-                src={PROFILE_AVATAR} 
+              <img
+                alt={PROFILE_NAME}
+                className="w-full h-full object-cover"
+                src={PROFILE_AVATAR}
               />
             </div>
             <div className="flex flex-col">
@@ -65,11 +65,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isOpen, setI
                   setActiveTab(item.label);
                   setIsOpen(false);
                 }}
-                className={`group flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${
-                  activeTab === item.label 
-                    ? 'bg-[#1e1b3d] text-white' 
+                className={`group flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${activeTab === item.label
+                    ? 'bg-[#1e1b3d] text-white'
                     : 'text-slate-400 hover:text-slate-200'
-                }`}
+                  }`}
               >
                 <span className={`material-symbols-outlined text-[20px] ${activeTab === item.label ? 'fill-1' : ''}`}>
                   {item.icon}

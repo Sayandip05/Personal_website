@@ -72,9 +72,25 @@ export const PLAYGROUND_ITEMS: PlaygroundItem[] = [
 export const WORK_EXPERIENCES: WorkExperience[] = [
   {
     id: '1',
-    company: 'DeepMind Solutions',
-    role: 'AI Engineer',
-    period: 'June 2023 — Present',
+    company: 'ESHURA',
+    role: 'Co-Founder',
+    period: 'Present',
+    description: 'Building an innovative SaaS platform from the ground up. Leading product vision, technical architecture, and team growth.',
+    highlights: [
+      'Co-founded and leading the technical development of the SaaS product.',
+      'Designing scalable architecture to support rapid growth.',
+      'Driving product strategy and user experience decisions.'
+    ],
+    techStack: ['React', 'TypeScript', 'Node.js', 'AWS', 'PostgreSQL'],
+    icon: 'rocket_launch',
+    link: 'https://www.eshura.com',
+    linkText: 'View the Official Website'
+  },
+  {
+    id: '2',
+    company: 'Infosys Springboard',
+    role: 'AI Engineer Intern',
+    period: '1st December — 31st January',
     description: 'Leading the development of large-scale language model applications. optimizing inference latency, and fine-tuning models for specific domains.',
     highlights: [
       'Deployed a custom LLM pipeline serving 1M+ requests daily with <500ms latency.',
@@ -83,6 +99,7 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     ],
     techStack: ['Python', 'PyTorch', 'FastAPI', 'AWS', 'Docker'],
     icon: 'psychology',
-    link: '#'
+    link: 'https://github.com/springboardmentor88888-mahaprasad/Intern-PlantChatBot-Project/tree/sayandip',
+    linkText: 'View Full Project on GitHub'
   }
 ];

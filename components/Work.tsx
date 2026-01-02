@@ -7,7 +7,7 @@ const Work: React.FC = () => {
     <div className="w-full max-w-4xl mx-auto flex flex-col gap-8 animate-fade-in-up">
       {/* Header */}
       <div className="flex flex-col gap-1 w-full border-b border-white/5 pb-6 mb-2">
-        <BlurText 
+        <BlurText
           text="Recent Experience"
           className="text-3xl font-bold text-white"
           delay={50}
@@ -22,7 +22,7 @@ const Work: React.FC = () => {
           <div key={exp.id} className="group relative">
             {/* Ambient Outer Glow on Hover */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-indigo-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-            
+
             <div className="relative w-full bg-surface-dark rounded-3xl p-8 border border-white/5 shadow-2xl flex flex-col gap-6">
               {/* Header Info */}
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
@@ -50,20 +50,20 @@ const Work: React.FC = () => {
                   <p className="text-slate-300 leading-relaxed font-normal">
                     {exp.description}
                   </p>
-                  
+
                   <ul className="space-y-4 mt-6">
                     {exp.highlights.map((highlight, idx) => {
                       const parts = highlight.split(/(25%|Storybook library)/g);
-                      
+
                       return (
                         <li key={idx} className="flex items-start gap-4 group/item">
                           <div className="mt-1 w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
                             <span className="material-symbols-outlined text-[14px] text-green-500 font-bold">check</span>
                           </div>
                           <span className="text-slate-400 text-sm leading-relaxed group-hover/item:text-slate-200 transition-colors">
-                            {parts.map((part, i) => 
-                              (part === '25%' || part === 'Storybook library') 
-                                ? <strong key={i} className="text-white font-semibold">{part}</strong> 
+                            {parts.map((part, i) =>
+                              (part === '25%' || part === 'Storybook library')
+                                ? <strong key={i} className="text-white font-semibold">{part}</strong>
                                 : part
                             )}
                           </span>
@@ -87,11 +87,13 @@ const Work: React.FC = () => {
                   </div>
 
                   <div className="mt-auto pt-6 border-t border-white/5">
-                    <a 
-                      href={exp.link} 
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-primary hover:text-indigo-400 font-bold transition-all group/link"
                     >
-                      <span>View Case Study</span>
+                      <span>{exp.linkText || 'View Case Study'}</span>
                       <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
                   </div>
